@@ -1,5 +1,7 @@
 # MexQL
 
+Repository: https://github.com/jakubtomczykdev/MexQL
+
 Text-to-SQL on the [BIRD](https://bird-bench.github.io/) benchmark with a small open LLM
 fine-tuned by reinforcement learning (GRPO with an execution-based reward), plus a variant
 for questions asked in Polish.

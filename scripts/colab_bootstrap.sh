@@ -2,7 +2,8 @@
 # Bootstrap a Google Colab (or any fresh Ubuntu + NVIDIA) session for MexQL.
 #
 #   bash scripts/colab_bootstrap.sh            # inside an existing checkout
-#   REPO_URL=https://github.com/<you>/MexQL.git bash <(curl -sSL <raw url of this file>)
+#   REPO_URL=https://github.com/jakubtomczykdev/MexQL.git bash <(curl -sSL \
+#       https://raw.githubusercontent.com/jakubtomczykdev/MexQL/main/scripts/colab_bootstrap.sh)
 #
 # Installs uv, creates a Python 3.11 environment with the GPU extras (vLLM picks the
 # PyTorch build matching the installed CUDA driver), and downloads the BIRD dev set.
