@@ -1,0 +1,15 @@
+# data and run outputs are never committed
+/data/
+/outputs/
+# python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+# editors / os
+.DS_Store
+.idea/
+.vscode/
+# notebooks checkpoints
+.ipynb_checkpoints/

@@ -1,0 +1,6 @@
+# Tiny model for smoke tests on laptops; not a baseline candidate.
+model:
+  name: qwen2.5-coder-0.5b-instruct
+  hf_id: Qwen/Qwen2.5-Coder-0.5B-Instruct
+  dtype: auto
+  chat_template_kwargs: {}

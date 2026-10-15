@@ -1,0 +1,29 @@
+# Base configuration shared by every script. Values can be overridden on the
+# command line with --set key.subkey=value (YAML-parsed).
+seed: 1234
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  outputs_dir: outputs
+
+data:
+  # Directory names as they appear inside the official archives.
+  dev_dirname: dev_20240627
+  train_dirname: train
+  # Number of train questions held out as val_internal (checkpoint selection).
+  val_internal_size: 500
+
+prompt:
+  max_examples_per_column: 3   # distinct example values shown per column
+  max_example_chars: 40        # longer example values are truncated
+  example_scan_rows: 200       # rows scanned per column to find distinct examples
+  include_evidence: true
+  max_model_len: 16384         # context window used for inference
+  max_new_tokens: 1024         # generation budget; prompt budget = max_model_len - max_new_tokens
+
+execution:
+  timeout_s: 30.0              # per query, same as the official BIRD script
+  max_rows: 500000             # result sets larger than this are rejected (status too_large)
+  num_workers: auto            # auto = min(cpu_count, 8)
+  worker_grace_s: 5.0          # extra seconds before a stuck worker is killed

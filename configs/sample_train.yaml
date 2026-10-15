@@ -1,0 +1,22 @@
+# Stage-2 preparation: sample several completions per train question and
+# record the fraction that executes to the gold result.
+backend: vllm
+split: train_rl          # train minus val_internal
+limit: 200               # run on the first N questions; null = all
+smoke_limit: 20
+run_name: null
+
+sampling:
+  n: 8
+  temperature: 0.8
+  top_p: 0.95
+  max_tokens: 1024
+
+vllm:
+  gpu_memory_utilization: 0.90
+  enable_prefix_caching: true
+  max_num_seqs: 64
+
+hf:
+  batch_size: 1
+  device: auto

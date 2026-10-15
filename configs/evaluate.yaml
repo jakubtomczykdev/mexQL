@@ -1,0 +1,21 @@
+# Greedy evaluation of one model on one split.
+backend: vllm            # vllm | hf | dummy
+split: dev               # dev | val_internal | train_rl
+limit: null              # evaluate only the first N questions (null = all)
+smoke_limit: 20          # used when --smoke is given
+run_name: null           # defaults to <model>_<split>[_smoke]
+
+sampling:
+  n: 1
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 1024
+
+vllm:
+  gpu_memory_utilization: 0.90
+  enable_prefix_caching: true
+  max_num_seqs: 64
+
+hf:
+  batch_size: 1          # >1 is slower on Apple MPS (padding); raise on CUDA
+  device: auto           # auto | cuda | mps | cpu

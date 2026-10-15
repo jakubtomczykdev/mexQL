@@ -1,0 +1,5 @@
+model:
+  name: qwen2.5-coder-3b-instruct
+  hf_id: Qwen/Qwen2.5-Coder-3B-Instruct
+  dtype: auto
+  chat_template_kwargs: {}
